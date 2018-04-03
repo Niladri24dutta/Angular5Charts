@@ -1,9 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import {routing} from './app.routes';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LinechartComponent } from './linechart/linechart.component';
+import {WeatherService} from './weather.service';
+
 
 @NgModule({
   declarations: [
@@ -13,9 +17,11 @@ import { LinechartComponent } from './linechart/linechart.component';
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
