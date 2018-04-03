@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import {routing} from './app.routes';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { LinechartComponent } from './linechart/linechart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    LinechartComponent
   ],
   imports: [
     BrowserModule,
