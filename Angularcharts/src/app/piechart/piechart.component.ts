@@ -18,7 +18,51 @@ export class PiechartComponent implements OnInit {
   }
 
   public CreatePieChart():void{
+    var pieConfig = {
+			type: 'pie',
+			data: {
+				datasets: [{
+					data: [
+						45,
+						65,
+						50,
+						60,
+						85
+					],
+					backgroundColor: [
+						'rgb(75, 192, 192)',
+						'rgb(54, 162, 235)',
+						'rgb(255, 205, 86)',
+						'rgb(255, 99, 132)',
+						'rgb(54, 162, 235)',
+          ],
+          borderColor : 'rgb(201, 203, 207)' ,
+          borderWidth:1,
+          hoverBorderWidth:2,
+					label: 'Runs scored by top 5 batsman in an innings'
+				}],
+				labels: [
+					'Dravid',
+					'Laxman',
+					'Ganguly',
+					'Virat',
+					'Sachin'
+				]
+			},
+			options: {
+        title: {
+          display: true,
+          text: 'Runs scored by top 5 batsman in an innings'
+        },
+        responsive: true,
+        animation:{
+          animateRotate: true,
+          animateScale:true
+        }
+			}
+    };
     
+    this.piechart = new Chart('piecanvas',pieConfig);
   }
 
   public CreateDoughnutChart():void{
