@@ -8,6 +8,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LinechartComponent } from './linechart/linechart.component';
 import {WeatherService} from './weather.service';
 import { BarchartComponent } from './barchart/barchart.component';
+import { PiechartComponent } from './piechart/piechart.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { BarchartComponent } from './barchart/barchart.component';
     AppComponent,
     WelcomeComponent,
     LinechartComponent,
-    BarchartComponent
+    BarchartComponent,
+    PiechartComponent
   ],
   imports: [
     BrowserModule,

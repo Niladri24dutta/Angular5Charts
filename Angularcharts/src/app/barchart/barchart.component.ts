@@ -18,7 +18,7 @@ export class BarchartComponent implements OnInit,AfterViewInit {
     var chartData = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 			datasets: [{
-				label: 'Temp in degree C',
+				label: 'Temp in degree Celcius',
 				backgroundColor: color('rgb(54, 162, 235)').alpha(0.5).rgbString(),
 				borderColor: `rgb(255, 99, 132)`,
 				borderWidth: 1,
@@ -38,21 +38,13 @@ export class BarchartComponent implements OnInit,AfterViewInit {
       type: 'bar',
 				data: chartData,
 				options: {
-					responsive: true,
 					legend: {
 						position: 'top',
 					},
 					title: {
 						display: true,
 						text: 'Chart.js Bar Chart demo'
-          },
-          scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:false
-                }
-            }]
-        }
+          }
       }    
     });
   }

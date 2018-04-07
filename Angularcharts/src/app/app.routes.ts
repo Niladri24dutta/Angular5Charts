@@ -2,6 +2,7 @@ import {Routes,RouterModule} from '@angular/router';
 import {WelcomeComponent} from './welcome/welcome.component';
 import {LinechartComponent} from './linechart/linechart.component'
 import {BarchartComponent} from './barchart/barchart.component'
+import {PiechartComponent} from './piechart/piechart.component'
 
 const routes:Routes = [
 
@@ -16,6 +17,10 @@ const routes:Routes = [
     {
         path:'barchart',
         component:BarchartComponent
+    },
+    {
+        path:'piechart',
+        component:PiechartComponent
     },
     {
         path:'',
