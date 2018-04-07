@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LinechartComponent } from './linechart/linechart.component';
 import {WeatherService} from './weather.service';
+import { BarchartComponent } from './barchart/barchart.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    LinechartComponent
+    LinechartComponent,
+    BarchartComponent
   ],
   imports: [
     BrowserModule,
