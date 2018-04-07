@@ -17,9 +17,9 @@ export class PiechartComponent implements OnInit {
     this.CreateDoughnutChart();
   }
 
-  public CreatePieChart():void{
-    var pieConfig = {
-			type: 'pie',
+  public createConfig(chartType:string):any{
+    var config = {
+			type: chartType,
 			data: {
 				datasets: [{
 					data: [
@@ -62,10 +62,15 @@ export class PiechartComponent implements OnInit {
 			}
     };
     
-    this.piechart = new Chart('piecanvas',pieConfig);
+    return config;
   }
 
+  public CreatePieChart():void{
+    var pieConfig = this.createConfig('pie');
+    this.piechart = new Chart('piecanvas',pieConfig);
+  }
   public CreateDoughnutChart():void{
-
+   var dntConfig = this.createConfig('doughnut');
+   this.dntchart = new Chart('dntcanvas',dntConfig);
   }
 }
