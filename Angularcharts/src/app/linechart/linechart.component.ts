@@ -9,12 +9,15 @@ declare var Chart: any;
 })
 export class LinechartComponent implements OnInit {
   chart: any[] = [];
+  loading:boolean = false; 
   @ViewChild('graphcanvas') lineChartCanvas:ElementRef;
   constructor(private _weather:WeatherService) { }
 
   ngOnInit() {
+    this.loading = true;
     this._weather.dailyWeatherUpdate().subscribe(res => {
       //console.log(res);
+      this.loading = false;
       let maxTemperature = res['list'].map(res => res.main.temp_max);
       let minTemperature = res['list'].map(res => res.main.temp_min);
       let allDatesinRange = res['list'].map(res => res.dt)
@@ -44,6 +47,7 @@ export class LinechartComponent implements OnInit {
           ]
         },
         options: {
+          responsive: true,
           legend: {
             display: false
           },
